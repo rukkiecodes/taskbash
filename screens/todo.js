@@ -1,21 +1,22 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
+import todo from "../styles/todo"
 
 export default function Todo() {
   return (
     <View style={styles.container}>
-      <Text>Open up.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.head_button_view}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.button_text}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.add_todo_view}>
+        <TouchableOpacity style={styles.add_todo_view_button}>
+          <Text style={styles.add_todo_view_button_text}>Add new todo</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = todo
