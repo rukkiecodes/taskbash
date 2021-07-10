@@ -20,9 +20,9 @@ export default StyleSheet.create({
   button: {
     alignItems: "center",
     backgroundColor: colors.purple,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     paddingVertical: 10,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   button_text: {
     color: colors.white,
@@ -43,5 +43,29 @@ export default StyleSheet.create({
   add_todo_view_button_text: {
     color: colors.white,
     fontSize: 14,
+  },
+  scrollview_container: {
+    flex: 1,
+    width: "100%",
+    marginTop: "10%",
+    marginBottom: "5%"
+  },
+  scrollview: {
+    width: "100%"
+  },
+  todos: {
+    width: "100%",
+    backgroundColor: colors.purple,
+    paddingHorizontal: 20,
+    height: 55,
+    borderRadius: 10,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    marginTop: 10
+  },
+  todos_text: {
+    color: colors.white,
+    fontSize: 16
   },
 });
