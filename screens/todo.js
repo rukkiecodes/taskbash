@@ -11,12 +11,12 @@ import {
 import todo from "../styles/todo";
 import colors from "../styles/colors";
 
-export default function Todo() {
+export default function Todo ({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.dark} />
       <View style={styles.head_button_view}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={() => navigation.navigate("Signup")} style={styles.button}>
           <Text style={styles.button_text}>Sign Up</Text>
         </TouchableOpacity>
       </View>
