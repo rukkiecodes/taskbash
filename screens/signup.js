@@ -13,12 +13,19 @@ import todo from "../styles/todo";
 import colors from "../styles/colors";
 import signup from "../styles/signup";
 
+import firebase from "firebase"
+
 export default function Todo({ navigation }) {
   const [email, onChangeEmail] = React.useState("");
   const [password, onChangePassword] = React.useState("");
 
   const signup_user = () => {
-    console.log("Hey");
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(user => {
+      console.log(user)
+    }).catch(error => {
+      console.log("Error signing Up: ", error)
+    })
   };
 
   return (
