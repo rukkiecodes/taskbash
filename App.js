@@ -24,6 +24,7 @@ const Stack = createStackNavigator();
 import Todo from "./screens/todo";
 import Signup from "./screens/signup";
 import Signin from "./screens/signin";
+import Task from "./screens/task"
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
         <Stack.Screen name="Todo" component={Todo} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Signin" component={Signin} />
+        <Stack.Screen name="Task" component={Task} />
       </Stack.Navigator>
     </NavigationContainer>
   );

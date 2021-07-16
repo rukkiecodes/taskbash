@@ -8,24 +8,39 @@ import {
   Image,
   Pressable,
   TextInput,
+  ActivityIndicator,
+  Alert,
 } from "react-native";
 import todo from "../styles/todo";
 import colors from "../styles/colors";
 import signup from "../styles/signup";
 
-import firebase from "firebase"
+import firebase from "firebase";
 
 export default function Todo({ navigation }) {
   const [email, onChangeEmail] = React.useState("");
   const [password, onChangePassword] = React.useState("");
+  const [spiner, onChangeSpiner] = React.useState(false);
 
   const signup_user = () => {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(user => {
-      console.log(user)
-    }).catch(error => {
-      console.log("Error signing Up: ", error)
-    })
+    onChangeSpiner(true);
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        onChangeSpiner(false);
+        navigation.navigate("Task");
+      })
+      .catch((error) => {
+        onChangeSpiner(false);
+        Alert.alert("An error has occured!!", `${error}`, [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+          { text: "OK" },
+        ]);
+      });
   };
 
   return (
@@ -70,7 +85,13 @@ export default function Todo({ navigation }) {
           </Pressable>
         </View>
         <TouchableOpacity onPress={signup_user} style={signup.signup_button}>
-          <Text style={signup.signup_button_text}>Sign Up</Text>
+          {/* <Text style={signup.signup_button_text}>Sign Up</Text> */}
+          {/* <ActivityIndicator size="small" color="#0000ff" /> */}
+          {spiner ? (
+            <ActivityIndicator size="small" color="#0000ff" />
+          ) : (
+            <Text style={signup.signup_button_text}>Sign Up</Text>
+          )}
         </TouchableOpacity>
       </View>
     </SafeAreaView>
