@@ -32,7 +32,7 @@ export default function Todo({ navigation }) {
       <View style={signup.form_view}>
         <View style={signup.head_texts}>
           <Text style={signup.head_texts_text_1}>Sign In</Text>
-          <Text style={signup.head_texts_text_2}>Create your free account</Text>
+          <Text style={signup.head_texts_text_2}>Welcome back. Sign in and ge started</Text>
         </View>
         <View style={signup.form_view_inputs}>
           <TextInput
@@ -55,7 +55,7 @@ export default function Todo({ navigation }) {
           </Pressable>
         </View>
         <TouchableOpacity style={signup.signup_button}>
-          <Text style={signup.signup_button_text}>Sign Up</Text>
+          <Text style={signup.signup_button_text}>Sign In</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

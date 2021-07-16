@@ -14,7 +14,13 @@ import colors from "../styles/colors";
 import signup from "../styles/signup";
 
 export default function Todo({ navigation }) {
-  const [text, onChangeText] = React.useState("Useless Text");
+  const [email, onChangeEmail] = React.useState("");
+  const [password, onChangePassword] = React.useState("");
+
+  const signup_user = () => {
+    console.log("Hey");
+  };
+
   return (
     <SafeAreaView style={signup.container}>
       <StatusBar backgroundColor={colors.dark} />
@@ -37,12 +43,14 @@ export default function Todo({ navigation }) {
         <View style={signup.form_view_inputs}>
           <TextInput
             style={signup.form_view_inputs_input_1}
-            onChangeText={onChangeText}
+            onChangeText={onChangeEmail}
+            value={email}
             placeholder="Email"
           />
           <TextInput
             style={signup.form_view_inputs_input_2}
-            onChangeText={onChangeText}
+            onChangeText={onChangePassword}
+            value={password}
             placeholder="Password"
             secureTextEntry={true}
           />
@@ -54,7 +62,7 @@ export default function Todo({ navigation }) {
             </Text>
           </Pressable>
         </View>
-        <TouchableOpacity style={signup.signup_button}>
+        <TouchableOpacity onPress={signup_user} style={signup.signup_button}>
           <Text style={signup.signup_button_text}>Sign Up</Text>
         </TouchableOpacity>
       </View>
