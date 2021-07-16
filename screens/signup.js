@@ -85,10 +85,8 @@ export default function Todo({ navigation }) {
           </Pressable>
         </View>
         <TouchableOpacity onPress={signup_user} style={signup.signup_button}>
-          {/* <Text style={signup.signup_button_text}>Sign Up</Text> */}
-          {/* <ActivityIndicator size="small" color="#0000ff" /> */}
           {spiner ? (
-            <ActivityIndicator size="small" color="#0000ff" />
+            <ActivityIndicator size="small" color="#fff" />
           ) : (
             <Text style={signup.signup_button_text}>Sign Up</Text>
           )}
